@@ -9,9 +9,11 @@
     <style>
         /* General styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         .timetable {
@@ -19,7 +21,8 @@
             border-collapse: collapse;
             margin-bottom: 20px;
             overflow-x: auto;
-            /* Enable horizontal scrolling */
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .timetable th,
@@ -30,13 +33,13 @@
         }
 
         .timetable th {
-            background-color: rgba(68, 67, 67, 0.669);
+            background-color: #3399ff;
             color: #fff;
         }
 
         .timetable td {
-            background-color: #fff;
-            color: #222;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         .timetable td:first-child {
@@ -44,23 +47,31 @@
             /* Make the first column (days) bold */
         }
 
-        .timetable .icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 5px;
+        /* Custom heading style */
+        .custom-heading {
+            background-color: #3399ff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #2962ff;
         }
 
-        /* Responsive styles for landscape mobile view */
-        @media only screen and (max-width: 767px) {
+        .custom-heading h1 {
+            font-size: 28px;
+            margin: 0;
+            line-height: 1.5;
+        }
 
-            .timetable td,
-            .timetable th {
-                font-size: 12px;
+        /* Responsive styles */
+        @media only screen and (max-width: 767px) {
+            .timetable td {
+                font-size: 14px;
                 padding: 8px;
             }
 
             .timetable th {
-                display: none;
+                display: table-cell;
             }
 
             .timetable td:first-child {
@@ -70,20 +81,21 @@
             .timetable tr:nth-child(even) {
                 background-color: #f2f2f2;
             }
+
+            .custom-heading h1 {
+                font-size: 24px;
+            }
         }
 
-        /* Custom heading style */
-        .custom-heading {
-            color: #2e2e2e;
-            text-align: center;
-            padding: 5px;
-            margin-bottom: 5px;
-        }
+        @media only screen and (max-width: 480px) {
+            .timetable td {
+                font-size: 12px;
+                padding: 6px;
+            }
 
-        .custom-heading h1 {
-            font-size: 24px;
-            margin: 0;
-            line-height: 1.5;
+            .custom-heading h1 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
